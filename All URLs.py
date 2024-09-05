@@ -1,11 +1,9 @@
 import requests
 from bs4 import BeautifulSoup as bs
-from pprint import pprint
 
 i = 1
 while i < 50:
     url = f'https://books.toscrape.com/catalogue/page-{i}.html'
-    i += 1
 
     s = requests.Session()
     res = s.get(url)
@@ -20,4 +18,4 @@ while i < 50:
 
     with open('All Books Url.txt', 'a+') as f:
         f.writelines(all_links)
-
+    i += 1
